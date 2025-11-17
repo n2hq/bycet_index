@@ -22,7 +22,7 @@ echo "🔄 Pulling latest changes..."
 
 
 echo "Deleting build folder..."
-#rm -rf build/
+rm -rf build/ 2>/dev/null || true
 
 echo "🛠  Building TEST..."
 npm run build:test
