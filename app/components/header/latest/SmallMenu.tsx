@@ -28,9 +28,9 @@ const SmallMenu = () => {
         <div className={`hidden lg:block`}>
             <div className={`flex gap-8 place-items-center`}>
                 {
-                    menudata.map((item, index: number) => {
+                    menudata?.map((item, index: number) => {
                         return (
-                            <div className={`font-semibold ${location.pathname === item.url ? 'text-black' : 'text-gray-500'} `}>
+                            <div key={index} className={`font-semibold ${location.pathname === item.url ? 'text-black' : 'text-gray-500'} `}>
                                 <Link to={item.url}>
                                     <div className={`capitalize`}>
                                         {
