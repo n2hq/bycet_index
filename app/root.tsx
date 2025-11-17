@@ -27,7 +27,6 @@ import { OnlineStatusProvider } from "./context/OnlineStatusContext";
 import { OperationProvider } from "./context/OperationContext";
 import { CustomNetworkError, isNetworkError, NetworkErrorBoundary } from "./components/utils/NetworkErrorBoundary";
 import LoadingMessage from "./components/content/LoadingMessage";
-import { LoadingProvider } from "./context/LoadingContext";
 
 
 export const links: LinksFunction = () => [
@@ -124,32 +123,30 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
 
+        {loading && <LoadingMessage loading={loading} />}
+        <NotificationProvider>
+          <OperationProvider>
+            <VideoSliderProvider>
+              <SliderProvider>
+                <EditVideoDialogProvider>
+                  <EditPhotoDialogProvider>
+                    <AddPhotoDialogProvider>
+                      <AddVideoDialogProvider>
+                        <AuthProvider>
+                          <OnlineStatusProvider>
 
-        <LoadingProvider>
-          <NotificationProvider>
-            <OperationProvider>
-              <VideoSliderProvider>
-                <SliderProvider>
-                  <EditVideoDialogProvider>
-                    <EditPhotoDialogProvider>
-                      <AddPhotoDialogProvider>
-                        <AddVideoDialogProvider>
-                          <AuthProvider>
-                            <OnlineStatusProvider>
-
-                              {children}
-                            </OnlineStatusProvider>
-                          </AuthProvider>
-                        </AddVideoDialogProvider>
-                      </AddPhotoDialogProvider>
-                    </EditPhotoDialogProvider>
-                  </EditVideoDialogProvider>
-                </SliderProvider>
-              </VideoSliderProvider>
-            </OperationProvider>
-          </NotificationProvider>
-          <ScrollRestoration />
-        </LoadingProvider>
+                            {children}
+                          </OnlineStatusProvider>
+                        </AuthProvider>
+                      </AddVideoDialogProvider>
+                    </AddPhotoDialogProvider>
+                  </EditPhotoDialogProvider>
+                </EditVideoDialogProvider>
+              </SliderProvider>
+            </VideoSliderProvider>
+          </OperationProvider>
+        </NotificationProvider>
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>

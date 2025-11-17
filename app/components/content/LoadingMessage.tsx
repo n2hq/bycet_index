@@ -32,10 +32,11 @@ const LoadingMessage = ({ loading }: LoadingProp) => {
 
     return (
         <>
-            <div className="flex justify-center items-center h-screen">
+            <div
+                style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
                 <div className="text-lg">
 
-                    <div className=" space-y-2 mb-3 flex place-content-center flex-col place-items-center ">
+                    <div style={{ marginBottom: '0px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '0.5em' }}>
                         <TbRotateClockwise2 className={`${spin && 'animate-spin'}`} size={30} />
 
                         <b className=' tracking-tight'>veycet</b>
