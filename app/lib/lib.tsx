@@ -730,7 +730,7 @@ export const getOperatingHours = async (businessGuid: string | null, userGuid: s
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
+        console.log(response.text)
         const data: any = await response.json();
 
         return new Promise((resolve) => setTimeout(() => {
