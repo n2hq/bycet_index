@@ -25,9 +25,9 @@ const Header = ({ listing, profileImageData, operatingHoursStatus, ratingsData }
 
                 <div className={`bg-white w-[60px] min-w-[60px] md:w-[95px] md:min-w-[95px] h-[60px] md:h-[95px] rounded-lg relative overflow-hidden border-[1px]  border-gray-200`}>
                     {
-                        listing?.image_url ?
+                        profileImageData?.image_url ?
                             <img
-                                src={profileImg}
+                                src={config.IMG_BASE_URL + profileImageData?.image_url}
                                 alt=""
                                 className={` object-cover w-full h-full `}
                             /> :
