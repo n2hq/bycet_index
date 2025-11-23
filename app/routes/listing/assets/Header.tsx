@@ -21,8 +21,9 @@ const Header = ({ listing, profileImageData, operatingHoursStatus, ratingsData }
             {/* <div className={`h-[5px] bg-gradient-to-r from-black to-blue-500 w-full mt-2 `}>
 
             </div> */}
-            <div className={`flex gap-2  w-full   md:rounded-xl`}>
+            <div className={`flex gap-3  w-full   md:rounded-xl`}>
 
+                {/** business logo */}
                 <div className={`bg-white w-[60px] min-w-[60px] md:w-[95px] md:min-w-[95px] h-[60px] md:h-[95px] rounded-lg relative overflow-hidden border-[1px]  border-gray-200`}>
                     {
                         profileImageData?.image_url ?
@@ -34,6 +35,8 @@ const Header = ({ listing, profileImageData, operatingHoursStatus, ratingsData }
                             <Placeholder />
                     }
                 </div>
+
+                {/** business details */}
                 <div className={`w-full block`}>
                     <div className={`text-[19px] md:text-[24px]
                 font-semibold  leading-[1.1em] font-sans text-blue-800 tracking-tight`}>
