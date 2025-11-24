@@ -64,6 +64,7 @@ const Header = ({ listing, profileImageData, operatingHoursStatus, ratingsData }
                                         operatingHoursStatus.openStatus === "selected_hours" ?
                                             <div>
                                                 {operatingHoursStatus.todayHoursFormatted}
+                                                {console.log('here')}
                                             </div> :
                                             <div>
                                                 {

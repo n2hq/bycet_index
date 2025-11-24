@@ -163,6 +163,30 @@ export async function action({ request, params }: ActionFunctionArgs) {
                     listingHash || null
                 ])
 
+            const rating = 3
+            const ratingGuid = crypto.randomUUID()
+            const comment = 'Default'
+            const fullname = `${body.first_name}, ${body.last_name}`
+            const userGuid = body.owner
+            const businessGuid = gid
+
+            const result2 = await query(`INSERT INTO tbl_rating SET
+                rating = ?,
+                comment = ?,
+                fullname = ?,
+                user_guid = ?,
+                business_guid = ?,
+                rating_guid = ?
+                `, [
+                rating,
+                comment,
+                fullname,
+                userGuid,
+                businessGuid,
+                ratingGuid
+            ])
+
+
 
 
             const data = {

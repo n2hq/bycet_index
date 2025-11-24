@@ -18,6 +18,9 @@ import { useOperation } from '~/context/OperationContext.js'
 import { pageType } from '~/lib/json/page_type.js'
 
 const CreatePageForm = ({ data, user }: any) => {
+
+
+
     const [formdata, setFormdata] = useState<any | null>(null)
     const [working, setWorking] = useState<boolean>(false)
     const notification = useNotification()
@@ -66,7 +69,9 @@ const CreatePageForm = ({ data, user }: any) => {
     }
 
     const handleAddBusiness = async (datar: any) => {
-        //console.log(datar)
+
+        datar['first_name'] = user.first_name
+        datar['last_name'] = user.last_name
 
         setWorking(true)
         //notification.notify('Creating page...')

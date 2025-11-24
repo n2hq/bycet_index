@@ -144,6 +144,8 @@ export type ListingType = {
     latitude: string
     longitude: string
     city_name: string
+    first_name: string
+    last_name: string
 }
 
 export type ContactType = {
